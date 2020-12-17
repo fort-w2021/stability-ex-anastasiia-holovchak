@@ -1,3 +1,5 @@
+library(checkmate)
+
 ## extract stability paths from refits of <model> on resampled <data>.
 ## arguments:
 ##    model: a fitted model object of class "regsubsets"

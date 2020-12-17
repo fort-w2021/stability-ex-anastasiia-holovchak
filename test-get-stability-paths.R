@@ -1,6 +1,11 @@
 # ---- test-get-stability-paths ----
 
 library(MASS)
+
+source("get-stability-paths-sol.R")
+source("plot-stability-paths-sol.R")
+
+
 # Dieses package ist nur noch in archivierten Versionen verfügbar, leider:
 # remotes::install_version("ElemStatLearn")
 data(prostate, package = "ElemStatLearn")
@@ -14,4 +19,7 @@ model <- leaps::regsubsets(max_formula,
 
 set.seed(20141020)
 stability_paths <- get_stability_paths(model, data, reps = 1000)
+
+
 stability_paths
+plot_stability_paths(stability_paths)
